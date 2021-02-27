@@ -146,9 +146,10 @@
             const casecount = parseInt(caseInput.value);
             const totalPrice = phoneCount * 1219 + casecount * 59;
             document.getElementById('sub-total').innerText = totalPrice;
-            const tax = Math.round(totalPrice * 0.1);
+            let tax = totalPrice * 0.1;
+            tax = tax.toFixed(3);
             document.getElementById('tax-amount').innerText = tax;
-            const finalTotal = totalPrice + tax;
+            const finalTotal =Math.round(totalPrice + tax);
             document.getElementById('final-total').innerText = finalTotal;
 
         }
